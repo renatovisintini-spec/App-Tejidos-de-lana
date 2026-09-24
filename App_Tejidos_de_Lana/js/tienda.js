@@ -1,0 +1,5 @@
+document.addEventListener('DOMContentLoaded',()=>{
+ const grid=document.querySelector('#product-grid');if(!grid)return; const u=TejidosUI.user();
+ grid.innerHTML=TEJIDOS_PRODUCTS.map(p=>`<article class="card product-card"><img src="imgs/${p.image}" alt="${TejidosUI.escape(p.title)}" loading="lazy"><div class="card-body"><span class="tag">${TejidosUI.escape(p.category)}</span><h3>${TejidosUI.escape(p.title)}</h3><div class="product-meta"><span class="price">${TejidosUI.money(p.price)}</span><button class="btn btn-primary" data-add="${p.id}" ${u?'':'disabled'}>${u?'Agregar':'Inicia sesión'}</button></div></div></article>`).join('');
+ grid.addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(!b)return; const id=Number(b.dataset.add), p=TEJIDOS_PRODUCTS.find(x=>x.id===id);const c=TejidosUI.getCart();const found=c.find(x=>x.id===id);if(found)found.qty++;else c.push({id:p.id,title:p.title,price:p.price,image:p.image,qty:1});TejidosUI.saveCart(c);TejidosUI.initHeader();b.textContent='Añadido ✓';setTimeout(()=>b.textContent='Agregar',800)});
+});

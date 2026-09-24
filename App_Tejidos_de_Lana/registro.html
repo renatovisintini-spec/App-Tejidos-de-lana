@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Proyecto de tienda artesanal de tejidos de lana">
+    <title>Registro · Tejidos de Lana</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body><a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+    <div class="container header-inner"><a class="brand" href="index.html">Tejidos <span>de Lana</span></a>
+        <nav class="nav" aria-label="Principal"><a href="index.html">Inicio</a><a href="modelos.html">Modelos</a><a
+                href="tienda.html">Tienda</a><a href="contacto.html">Contacto</a><a href="blog.html">Blog</a></nav>
+        <div class="session" data-session></div>
+    </div>
+</header>
+<main id="contenido">
+    <section class="section">
+        <div class="container">
+            <form class="form-shell form-grid" data-auth-form="register"><p class="eyebrow">Cuenta</p>
+                <h1>Registrarse</h1>
+                <p class="notice">Uso educativo: el registro se almacena en el navegador, no en un servidor.</p>
+                <div class="field"><label for="nombre">Nombre</label><input id="nombre" name="nombre"
+                                                                            autocomplete="name" required></div>
+                <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email"
+                                                                                       type="email" autocomplete="email"
+                                                                                       required></div>
+                <div class="field"><label for="password">Contraseña</label>
+                    <div class="field-row"><input id="password" name="password" type="password" minlength="6" required>
+                        <button type="button" class="btn btn-secondary" data-toggle-password="password">Mostrar</button>
+                    </div>
+                </div>
+                <div class="field"><label for="repassword">Repetir contraseña</label>
+                    <div class="field-row"><input id="repassword" name="repassword" type="password" minlength="6"
+                                                  required>
+                        <button type="button" class="btn btn-secondary" data-toggle-password="repassword">Mostrar
+                        </button>
+                    </div>
+                </div>
+                <div data-message aria-live="polite"></div>
+                <button class="btn btn-primary" type="submit">Crear cuenta</button>
+            </form>
+        </div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div class="container footer-inner"><span>© 2026 Tejidos de Lana · Proyecto demostrativo</span><span class="small">HTML · CSS · JavaScript · localStorage</span>
+    </div>
+</footer>
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>
